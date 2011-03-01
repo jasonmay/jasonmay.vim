@@ -1,7 +1,3 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 set encoding=utf8
 syntax on
 set ruler
@@ -56,6 +52,9 @@ let perl_include_pod=1
 let perl_string_as_statement=1
 let perl_sync_dist=1000
 
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 filetype plugin indent on
 
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -92,15 +91,10 @@ hi EOLWS ctermbg=red
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
 autocmd FileType help nnoremap <buffer> <BS> <C-T>
 
-autocmd BufWritePost *.{rb,py,zsh,sh,pl}   silent exe "!chmod +x %"
-autocmd BufWritePost Makefile.PL silent exe "!chmod -x %"
-
-autocmd BufWritePost .vimrc source ~/.vimrc
-autocmd BufWritePost  vimrc source ~/.vimrc
+"autocmd BufWritePost *.vim source ~/.vimrc
+autocmd BufWritePost * source ~/.vimrc
 
 autocmd FileType           perl highlight Operator ctermbg=Black ctermfg=DarkGray
-
-autocmd BufNewFile,BufReadPost * silent !mkdir -p $(dirname %)
 
 autocmd BufReadPost *
 \  if line("'\"") > 0 && line("'\"") <= line("$") |

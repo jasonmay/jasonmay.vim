@@ -78,6 +78,9 @@ snippet cdd
 	use Data::Dumper; $c->log->debug(Dumper(${1})) if $c->debug;
 snippet hri
 	${1}->result_class('DBIx::Class::ResultClass::HashRefInflator');
+snippet esc
+	{ (my $e = ${1}) =~ s/\e/\\e/g; warn $e }
+
 snippet package
 	package ${1:`substitute(matchstr(expand("%"), '^lib/\zs.*\ze\.pm'), '/', '::', 'g')`};
 

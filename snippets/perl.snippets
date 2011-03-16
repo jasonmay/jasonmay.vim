@@ -43,6 +43,18 @@ snippet workdbic
 			name_sep   => '.',
 		}
 	);
+snippet workcsv
+	#!/usr/bin/env perl
+	use strict;
+	use warnings;
+	use feature 'say';
+	use Text::CSV;
+
+	my $csv = Text::CSV->new;
+	$csv->getline(\*STDIN);
+	while (my $row = $csv->getline(\*STDIN)) {
+		${1}
+	}
 snippet script
 	#!/usr/bin/env perl
 	use strict;

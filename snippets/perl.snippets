@@ -55,6 +55,8 @@ snippet workcsv
 	while (my $row = $csv->getline(\*STDIN)) {
 		${1}
 	}
+snippet csvline
+	print join(',', map { qq["$_"] } ${1}) . "\n";
 snippet script
 	#!/usr/bin/env perl
 	use strict;

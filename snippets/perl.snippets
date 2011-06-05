@@ -194,3 +194,10 @@ snippet res
 
 snippet rawres
 	return [ '${1:200}', [ 'Content-Type' => '${2:text/html}' ], [ "${3}" ] ];
+
+snippet plack
+	use strict;
+	use warnings;
+	use Plack::Request;
+	use Plack::Response;
+	use Plack::Builder;

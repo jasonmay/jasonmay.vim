@@ -201,3 +201,6 @@ snippet plack
 	use Plack::Request;
 	use Plack::Response;
 	use Plack::Builder;
+
+snippet quickwrite
+	{ open my $fh, '>', '${1}'; print $fh ${2}; close $fh; }

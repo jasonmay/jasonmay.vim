@@ -70,6 +70,7 @@ autocmd BufNewFile,BufRead *.json      set ft=json
 autocmd BufNewFile,BufRead *.p6,*.pm6  set ft=perl6
 autocmd BufNewFile,BufRead *.scpt      set ft=applescript
 autocmd BufNewFile,BufRead Xdefaults   set ft=Xdefaults
+autocmd BufNewFile,BufRead share/html/* set ft=mason
 
 autocmd FileType           ruby set tabstop=2
 autocmd FileType           ruby set shiftwidth=2

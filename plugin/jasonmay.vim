@@ -140,7 +140,9 @@ map      <Leader>gc :!git add -p % && git commit<CR>
 
 map      <Leader>p :set paste<CR>:r!pbpaste<CR>:set nopaste<CR>
 
-map      ;l :silent !push-to-culex.sh<CR>
+nmap t :FufCoverageFile<CR>
+nmap b :FufBuffer<CR>
+nmap f :FufLine!<CR>
 
 iabbrev to_jason   to_json
 iabbrev from_jason from_json

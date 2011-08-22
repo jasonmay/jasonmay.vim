@@ -204,3 +204,6 @@ snippet plack
 
 snippet quickwrite
 	{ open my $fh, '>', '${1}'; print $fh ${2}; close $fh; }
+
+snippet rle
+	RT->Logger->error(${1});

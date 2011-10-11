@@ -124,7 +124,7 @@ vmap     H          ^
 nmap     L          $
 vmap     L          $
 
-nmap     M          :nohl<CR>:syntax sync fromstart<CR>
+nmap     M          :nohl<CR>:syn on<CR>:syntax sync fromstart<CR>
 
 nmap     <Left>     :bn<CR>
 nmap     <Right>    :bp<CR>

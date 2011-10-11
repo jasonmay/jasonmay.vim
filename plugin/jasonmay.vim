@@ -73,6 +73,8 @@ autocmd BufNewFile,BufRead Xdefaults   set ft=Xdefaults
 autocmd BufNewFile,BufRead share/html/* set ft=mason
 autocmd BufNewFile,BufRead *.md      set ft=markdown
 
+autocmd BufNewFile,BufRead initialdata set ft=perl
+
 autocmd FileType           ruby set tabstop=2
 autocmd FileType           ruby set shiftwidth=2
 autocmd FileType           ruby set softtabstop=2

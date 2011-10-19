@@ -71,6 +71,7 @@ autocmd BufNewFile,BufRead *.p6,*.pm6  set ft=perl6
 autocmd BufNewFile,BufRead *.scpt      set ft=applescript
 autocmd BufNewFile,BufRead Xdefaults   set ft=Xdefaults
 autocmd BufNewFile,BufRead share/html/* set ft=mason
+autocmd BufNewFile,BufRead etc/upgrade/*/content set ft=perl
 autocmd BufNewFile,BufRead *.md      set ft=markdown
 
 autocmd BufNewFile,BufRead initialdata set ft=perl

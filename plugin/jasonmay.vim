@@ -80,12 +80,16 @@ autocmd FileType           ruby set tabstop=2
 autocmd FileType           ruby set shiftwidth=2
 autocmd FileType           ruby set softtabstop=2
 
+autocmd FileType           eruby set tabstop=2
+autocmd FileType           eruby set shiftwidth=2
+autocmd FileType           eruby set softtabstop=2
+
+autocmd FileType           html set tabstop=2
+autocmd FileType           html set shiftwidth=2
+autocmd FileType           html set softtabstop=2
+
 autocmd FileType           perl setlocal makeprg=$VIMRUNTIME/tools/efm_perl.pl\ -c\ %\ $*
 autocmd FileType           perl setlocal errorformat=%f:%l:%m
-
-autocmd FileType           ruby set tabstop=2
-autocmd FileType           ruby set shiftwidth=2
-autocmd FileType           ruby set softtabstop=2
 
 " Automatic commands
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/

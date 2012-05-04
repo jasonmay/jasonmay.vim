@@ -147,9 +147,8 @@ map      <Leader>gc :!git add -p % && git commit<CR>
 
 map      <Leader>p :set paste<CR>:r!pbpaste<CR>:set nopaste<CR>
 
-nmap t :FufCoverageFile<CR>
-nmap b :FufBuffer<CR>
-nmap f :FufLine!<CR>
+nmap <C-n> :silent cnext<CR>
+nmap <C-p> :silent cprev<CR>
 
 iabbrev to_jason   to_json
 iabbrev from_jason from_json

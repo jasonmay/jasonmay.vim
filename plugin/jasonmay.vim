@@ -216,3 +216,67 @@ function! s:align_assignments()
 endfunction
 "nmap <silent> <Leader>= :call <SID>align_assignments()<CR>
 nmap S :call <SID>align_assignments()<CR>
+
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+if $SHELL =~ 'zsh' && exists('g:_zsh_hist_fname')
+    let s:initial_files = {}
+
+    autocmd VimEnter * call <SID>init_zsh_hist()
+    autocmd BufNewFile,BufRead * call <SID>zsh_hist_append()
+    autocmd BufDelete * call <SID>remove_initial_file(expand("<afile>"))
+
+    function! s:remove_initial_file (file)
+        if has_key(s:initial_files, a:file)
+            unlet s:initial_files[a:file]
+        endif
+    endfunction
+    function! s:get_buffer_list_text ()
+        redir => output
+        ls!
+        redir END
+        return output
+    endfunction
+    function! s:get_buffer_list ()
+        silent let output = <SID>get_buffer_list_text()
+        let buffer_list = []
+        for buffer_desc in split(output, "\n")
+            let buffer_bits = split(buffer_desc, '"')
+            call add(buffer_list, buffer_bits[1])
+        endfor
+        return buffer_list
+    endfunction
+    function! s:init_zsh_hist ()
+        for fname in <SID>get_buffer_list()
+            let s:initial_files[fname] = 1
+        endfor
+        call delete(g:_zsh_hist_fname)
+    endfunction
+    function! s:zsh_hist_append ()
+        let to_append = expand("%")
+        " XXX fuzzyfinder sets buftype too late to be caught by this... this
+        " is broken, but not sure what a better fix is
+        if &buftype == '' && to_append != "[fuf]"
+            if !has_key(s:initial_files, to_append)
+                if filereadable(g:_zsh_hist_fname)
+                    let hist = readfile(g:_zsh_hist_fname)
+                else
+                    let hist = []
+                endif
+                call add(hist, to_append)
+                call writefile(hist, g:_zsh_hist_fname)
+            endif
+        endif
+    endfunction
+endif

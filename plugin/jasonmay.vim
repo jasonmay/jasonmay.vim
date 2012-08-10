@@ -96,6 +96,14 @@ autocmd FileType           html set tabstop=2
 autocmd FileType           html set shiftwidth=2
 autocmd FileType           html set softtabstop=2
 
+autocmd FileType           haml set tabstop=2
+autocmd FileType           haml set shiftwidth=2
+autocmd FileType           haml set softtabstop=2
+
+autocmd FileType           coffee set tabstop=2
+autocmd FileType           coffee set shiftwidth=2
+autocmd FileType           coffee set softtabstop=2
+
 autocmd FileType           perl setlocal makeprg=$VIMRUNTIME/tools/efm_perl.pl\ -c\ %\ $*
 autocmd FileType           perl setlocal errorformat=%f:%l:%m
 

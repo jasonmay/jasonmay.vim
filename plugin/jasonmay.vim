@@ -41,11 +41,9 @@ set smartindent
 
 set foldenable
 set foldmethod=marker
-set bg=light
+set bg=dark
 
 set backupskip=/tmp/*,/private/tmp/*"
-
-set term=linux
 
 let perl_extended_vars=1
 let perl_include_pod=1

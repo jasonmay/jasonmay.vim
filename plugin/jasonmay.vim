@@ -55,6 +55,16 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
+if &term == "xterm-256color"
+    set background=dark
+    let g:solarized_termcolors=256
+    colorscheme solarized
+else
+    set background=light
+end
+
+call togglebg#map("<C-k>")
+
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 highlight Search NONE ctermfg=lightred

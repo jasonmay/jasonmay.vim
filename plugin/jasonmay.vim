@@ -147,6 +147,8 @@ vmap     H          ^
 nmap     L          $
 vmap     L          $
 
+nmap     ;l  :e ~/.main.list<CR>
+
 nmap     M          :nohl<CR>:syn on<CR>:syntax sync fromstart<CR>:set background=dark<CR><C-k>
 
 nmap     <Left>     :bn<CR>
@@ -280,3 +282,24 @@ if $SHELL =~ 'zsh' && exists('g:_zsh_hist_fname')
         endif
     endfunction
 endif
+
+autocmd BufNewFile,BufRead *.list call s:CustomListFile()
+function! s:CustomListFile()
+
+    " support Tab and Shift-Tab
+    nmap <buffer> <S-Tab> <<a
+    imap <buffer> <S-Tab> <Esc><<a
+
+    nmap <buffer> <Tab> >>a
+    imap <buffer> <Tab> <Esc>>>a
+
+    " o and O are habit, DWIW
+    nmap <buffer> o :call ListNewItem(0)<CR>a
+    nmap <buffer> O k:call ListNewItem(0)<CR>a
+
+    " Fresh line should start with a '- '
+    nnoremap <buffer> cc cc-<Space>
+
+    " If a line has <~/.foo.list>, open that list in a new buffer
+    nmap <buffer> ;o f<yi<:exe ':e ' . @"<CR>
+endfunction

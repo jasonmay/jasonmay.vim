@@ -164,12 +164,6 @@ map      <Leader>p :set paste<CR>:r!pbpaste<CR>:set nopaste<CR>
 nmap <C-n> :silent cnext<CR>
 nmap <C-p> :silent cprev<CR>
 
-iabbrev to_jason   to_json
-iabbrev from_jason from_json
-
-iabbrev encode_jason   encode_json
-iabbrev decode_jason   decode_json
-
 imap <C-l> <space>=><space>
 
 iabbrev reponse    response

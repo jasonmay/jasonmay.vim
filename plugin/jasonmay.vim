@@ -98,9 +98,6 @@ hi EOLWS ctermbg=red
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
 autocmd FileType help nnoremap <buffer> <BS> <C-T>
 
-"autocmd BufWritePost *.vim source ~/.vimrc
-autocmd BufWritePost * source ~/.vimrc
-
 autocmd FileType           perl highlight Operator ctermbg=Black ctermfg=DarkGray
 
 autocmd BufReadPost *

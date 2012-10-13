@@ -126,6 +126,8 @@ autocmd BufReadPost *
 \    exe "normal g`\"" |
 \  endif
 
+autocmd BufEnter * Rvm
+
 " Mappings
 
 inoremap <silent> <C-a> <ESC>u:set paste<CR>.:set nopaste<CR>gi

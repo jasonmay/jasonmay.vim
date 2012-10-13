@@ -134,15 +134,11 @@ inoremap <silent> <C-a> <ESC>u:set paste<CR>.:set nopaste<CR>gi
 
 nmap     Y          y$
 
-nmap     \/         :nohl<CR>
-
 nmap     <Right>    :bn<CR>
 nmap     <Left>     :bp<CR>
 
 imap     <Right>    <C-o>:bn<CR>
 imap     <Left>     <C-o>:bp<CR>
-
-map      <F5>       :make<CR>
 
 nmap     H          ^
 vmap     H          ^
@@ -162,8 +158,6 @@ inoremap <F1>       <Esc>
 imap     <C-J>      <Esc>
 
 nnoremap -          <Space>
-
-map      <Leader>gc :!git add -p % && git commit<CR>
 
 map      <Leader>p :set paste<CR>:r!pbpaste<CR>:set nopaste<CR>
 

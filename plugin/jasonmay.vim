@@ -98,8 +98,6 @@ hi EOLWS ctermbg=red
 autocmd FileType help nnoremap <buffer> <CR> <C-]>
 autocmd FileType help nnoremap <buffer> <BS> <C-T>
 
-autocmd FileType           perl highlight Operator ctermbg=Black ctermfg=DarkGray
-
 autocmd BufReadPost *
 \  if line("'\"") > 0 && line("'\"") <= line("$") |
 \    exe "normal g`\"" |

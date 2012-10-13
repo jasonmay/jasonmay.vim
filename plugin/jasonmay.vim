@@ -176,6 +176,8 @@ iabbrev from_jason from_json
 iabbrev encode_jason   encode_json
 iabbrev decode_jason   decode_json
 
+imap <C-l> <space>=><space>
+
 iabbrev reponse    response
 iabbrev shfit      shift
 iabbrev sfhit      shift

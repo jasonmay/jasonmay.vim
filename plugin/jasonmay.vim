@@ -63,8 +63,6 @@ else
     set background=light
 end
 
-call togglebg#map("<C-k>")
-
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 highlight Search NONE ctermfg=lightred

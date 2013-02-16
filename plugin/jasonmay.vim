@@ -101,7 +101,9 @@ autocmd BufReadPost *
 \    exe "normal g`\"" |
 \  endif
 
-autocmd BufEnter * Rvm
+if exists(":Rvm")
+    autocmd BufEnter * Rvm
+endif
 
 " Mappings
 
